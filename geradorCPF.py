@@ -22,6 +22,7 @@ while True:
 
     contador = 0
 
+    # Calculando primeiro digito verificador
     for numero in range(10, 1, -1):
         total_primeira_multiplicacao += numero * numeros_gerados[contador]
         contador += 1
@@ -30,22 +31,22 @@ while True:
 
     contador = 1
 
+    # Calculando segundo digito verificador
     for numero in range(10, 1, -1):
         total_segunda_multiplicacao += numero * numeros_gerados[contador]
         contador += 1
     
     segundo_digito_verificardor = 11 - (total_segunda_multiplicacao % 11)
 
+    # Verificando se o digito verificardor é c
     if numeros_gerados[9] == primeito_digito_verificador and numeros_gerados[10] == segundo_digito_verificardor:
-        print('=-' * 20)
+        print('=-' * 40)
         print(f'Este é um CPF gerador automaticamente {numeros_gerados}')
-        print(f'Gerado após {tentativas} tentativas')
+        print(f'Após {tentativas} tentativas')
         break
     else:
         tentativas += 1
         print(f'Tentativa numero {tentativas}º')
         continue
 
-
-
-    
+print('Fim')
